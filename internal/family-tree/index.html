@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ফুটার লেআউট</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer {
+            display: flex;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            box-sizing: border-box; /* প্যাডিং সহ উপাদানটির মোট প্রস্থ এবং উচ্চতা অন্তর্ভুক্ত করুন */
+            margin-top: auto; /* ফুটারকে নিচে ঠেলে দেয় */
+        }
+
+        .footer-section {
+            flex: 1; /* প্রতিটি বিভাগ সমান স্থান গ্রহণ করে */
+            padding: 0 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-section h3 {
+            margin-top: 0;
+            color: #eee;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* সামাজিক আইকন বিভাগের জন্য নির্দিষ্ট স্টাইল */
+        .social-icons {
+            text-align: right; /* আইকনগুলিকে তাদের বিভাগের মধ্যে ডানদিকে সারিবদ্ধ করুন */
+            display: flex;
+            justify-content: flex-end; /* বিষয়বস্তু ডানদিকে ঠেলে দিন */
+            align-items: center; /* উল্লম্বভাবে আইকনগুলিকে কেন্দ্রে রাখুন */
+            flex-wrap: wrap; /* আইকনগুলি বেশি জায়গা নিলে মোড়ানোর অনুমতি দিন */
+            gap: 10px; /* সামাজিক আইকনগুলির মধ্যে স্থান */
+        }
+
+        .social-icons .icon {
+            width: 30px; /* আইকনগুলির জন্য উদাহরণ নির্দিষ্ট প্রস্থ */
+            height: 30px; /* আইকনগুলির জন্য উদাহরণ নির্দিষ্ট উচ্চতা */
+            background-color: #555;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+            flex-shrink: 0; /* আইকনগুলিকে সঙ্কুচিত হতে বাধা দিন */
+        }
+
+        .social-icons .icon:hover {
+            background-color: #007bff;
+        }
+
+        /* প্রদর্শনের জন্য বিষয়বস্তু */
+        .main-content {
+            flex-grow: 1; /* প্রধান বিষয়বস্তুকে উপলব্ধ স্থান গ্রহণ করার অনুমতি দেয় */
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>মূল পৃষ্ঠার বিষয়বস্তু</h1>
+        <p>ফুটার নিচে থাকবে তা দেখানোর জন্য এটি কিছু উদাহরণ বিষয়বস্তু।</p>
+        <p>ফুটার কিভাবে আচরণ করে তা দেখতে আপনার ব্রাউজার উইন্ডোটি রিসাইজ করার চেষ্টা করুন।</p>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-section left-section">
+            <h3>অন্যান্য লিঙ্ক</h3>
+            <ul>
+                <li><a href="#">গোপনীয়তা নীতি</a></li>
+                <li><a href="#">সেবার শর্তাবলী</a></li>
+                <li><a href="#">সাইটম্যাপ</a></li>
+            </ul>
+        </div>
+        <div class="footer-section middle-section">
+            <h3>দরকারী লিঙ্ক</h3>
+            <ul>
+                <li><a href="#">আমাদের সম্পর্কে</a></li>
+                <li><a href="#">যোগাযোগ করুন</a></li>
+                <li><a href="#">প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী</a></li>
+                <li><a href="#">সহায়তা</a></li>
+            </ul>
+        </div>
+        <div class="footer-section right-section social-icons">
+            <a href="#" class="icon">FB</a>
+            <a href="#" class="icon">TW</a>
+            <a href="#" class="icon">IG</a>
+            <a href="#" class="icon">LN</a>
+        </div>
+    </footer>
+
+</body>
+</html>

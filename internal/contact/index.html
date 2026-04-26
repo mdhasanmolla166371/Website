@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Website Hero - Dark Navy Theme</title>
+    <style>
+      /* --- 1. Basic Reset & Variables --- */
+      :root {
+        --bg-color: #121b2d; /* Professional Dark Navy Blue */
+        --text-main: #ffffff; /* Clean White for Heading */
+        --text-sub: #a0aabf; /* Light Grey for Sub-text */
+        --accent-color: #00c2cb; /* Teal Accent for primary CTA */
+        --max-width: 1600px;
+        --font-stack: "Poppins", sans-serif; /* Modern Sans-serif */
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-stack);
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        overflow-x: hidden; /* Prevent horizontal scroll */
+      }
+
+      /* --- 2. Structure & Container --- */
+      .hero-section {
+        width: 100%;
+        min-height: 80vh; /* Good vertical presence */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 10px; /* Base padding */
+      }
+
+      .hero-container {
+        width: 100%;
+        max-width: var(--max-width);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;  
+      }
+
+       .hero-text {
+        flex: 0 0 45%; /* Text occupies 40% */
+        max-width: 600px; /* Optional cap for readability */
+      }
+
+      .hero-text h1 {
+        font-size: 1em;
+        line-height: 1.2;
+        white-space: nowrap;
+        margin-bottom: 8px;
+      }
+
+      .hero-text p {
+        color: var(--text-sub);
+         line-height: 1.6;
+        margin-bottom: 30px;
+        font-size: 12px;
+      }
+ 
+
+       .hero-image-wrapper {
+        flex: 0 0 53%; /* Fulfills 55% to 60% requirement */
+        display: flex;
+        justify-content: flex-end; /* Align to the right edge */
+      }
+
+      .hero-image-container {
+        width: 100%;
+        aspect-ratio: 1/1;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        background-color: #ffffff;
+      }
+
+      .hero-image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover container, maintaining ratio */
+        object-position: center;
+        /* Smooth Hover Transition */
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      /* Image Hover Effect */
+      .hero-image-container:hover img {
+        transform: scale(1.05); /* Subtle smooth zoom */
+      }
+  
+    </style>
+  </head>
+  <body>
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="hero-text">
+          <h1>Crafting Digital.</h1>
+          <p>
+            Welcome to my corner of the web. I'm Alex Johnson, a UX/UI Designer
+            & Front-End Developer dedicated to building intuitive and impactful
+            digital products. Let's create something exceptional together.
+          </p>
+        </div>
+        <div class="hero-image-wrapper">
+          <div class="hero-image-container">
+            <img src="" alt=""/>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

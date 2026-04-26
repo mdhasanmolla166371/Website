@@ -1,0 +1,84 @@
+/* বেসিক রিসেট */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0a192f;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+.hero-container {
+  padding: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column; /* মোবাইলে ইমেজ উপরে, টেক্সট নিচে */
+}
+
+/* মোবাইল ভার্সন (১ থেকে ৭৯৯ পিক্সেল) */
+.text-side {
+  width: 100%;
+  padding: 20px;
+}
+
+.image-side {
+  width: 100%;
+}
+
+.image-box {
+  width: 100%;
+  padding-top: 100%; /* এটি ছবিকে স্কয়ার বা ১:১ রেশিওতে রাখবে */
+  positi on: relative;
+  overflow: hidden;
+}
+
+.image-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  object-fit: cover; /* ইমেজটি স্কয়ার এরিয়ার মধ্যে সুন্দরভাবে ফিট হবে */
+  transition: transform 0.5s ease; /* মডার্ন হোভার ইফেক্ট */
+}
+
+/* মডার্ন হোভার ইফেক্ট */
+.image-box:hover img {
+  transform: scale(1.05);
+}
+
+/* ডেস্কটপ ভার্সন (৮০০ পিক্সেল থেকে ১৬০০ পিক্সেল) */
+@media (min-width: 800px) {
+  .content-wrapper {
+    flex-direction: row; /* পাশাপাশি বিন্যাস */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .text-side {
+    width: 40%;
+  }
+
+  .image-side {
+    width: 60%;
+  }
+
+  .image-box {
+    padding-top: 0; /* স্কয়ার রেশিও বাদ দিয়ে ফুল সাইজ */
+    height: 400px; /* ডেস্কটপে একটি নির্দিষ্ট উচ্চতা */
+  }
+
+  .image-box img {
+    position: static; /* নরমাল ফ্লোতে ফিরে আসবে */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* মডার্ন লুকের জন্য বর্ডার রেডিয়াস */
+  }
+}

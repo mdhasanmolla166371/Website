@@ -1,0 +1,63 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#0b1d3a;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:sans-serif;
+}
+
+/* CARD */
+.card{
+  display:flex;
+  width:100%;
+  max-width:min(95vw, 1600px);
+  background:#112a52;
+  border-radius:16px;
+  overflow:hidden;
+}
+
+/* TEXT */
+.text{
+  width:50%;
+  padding:clamp(12px, 2vw, 40px);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* IMAGE */
+.image{
+  width:50%;
+  height:clamp(220px, 60vw, 600px);
+  overflow:hidden;
+}
+
+/* 🔥 MAIN MAGIC HERE */
+.image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  /* 👉 smooth reveal from both sides */
+  clip-path: inset(
+    0 
+    clamp(0%, calc(25% - 10vw), 25%) 
+    0 
+    clamp(0%, calc(25% - 10vw), 25%)
+  );
+
+  transition: clip-path 0.1s linear;
+}
+
+/* ======================
+   ONLY BREAKPOINT (layout change)
+   ====================== */
+ 
