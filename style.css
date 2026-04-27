@@ -3,10 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  overscroll-behavior: none;
+}
 body {
   height: 100vh;
-  overflow-x: hidden;
 }
+
 .fullContainer {
   max-width: 1600px;
   width: 100%;
