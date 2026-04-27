@@ -1,63 +1,158 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* এক্সাম্পল ১ স্টাইল */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-  background:#0b1d3a;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:sans-serif;
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #eee;
+    background-color: #222;
 }
 
-/* CARD */
-.card{
-  display:flex;
-  width:100%;
-  max-width:min(95vw, 1600px);
-  background:#112a52;
-  border-radius:16px;
-  overflow:hidden;
+ /* এক্সাম্পল ২ স্টাইল */
+.footer-ex2 {
+    background-color: #222;
+    padding: 40px 20px 20px;
+    color: #eee;
 }
 
-/* TEXT */
-.text{
-  width:50%;
-  padding:clamp(12px, 2vw, 40px);
-  color:#fff;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.footer-container-ex2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 20px;
 }
 
-/* IMAGE */
-.image{
-  width:50%;
-  height:clamp(220px, 60vw, 600px);
-  overflow:hidden;
+.footer-section-ex2 {
+    flex: 1 1 100%; /* মোবাইলে প্রতিটি সেকশন পুরো প্রস্থ নেবে */
+    margin-bottom: 30px;
 }
 
-/* 🔥 MAIN MAGIC HERE */
-.image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-
-  /* 👉 smooth reveal from both sides */
-  clip-path: inset(
-    0 
-    clamp(0%, calc(25% - 10vw), 25%) 
-    0 
-    clamp(0%, calc(25% - 10vw), 25%)
-  );
-
-  transition: clip-path 0.1s linear;
+.footer-section-ex2 h3,
+.footer-section-ex2 h4 {
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 1.2em;
 }
 
-/* ======================
-   ONLY BREAKPOINT (layout change)
-   ====================== */
- 
+.footer-section-ex2 p {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.footer-section-ex2 ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section-ex2 ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section-ex2 ul li a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section-ex2 ul li a:hover {
+    color: #007bff;
+}
+
+/* সোশ্যাল লিঙ্ক স্টাইল Ex2 */
+.footer-social-ex2 ul {
+    display: flex;
+    flex-direction: column; /* মোবাইলে উল্লম্ব */
+    gap: 15px;
+}
+
+.footer-social-ex2 ul li a {
+    display: flex;
+    align-items: center;
+    color: #eee;
+    background-color: #333;
+    border-radius: 50px; /* গোল শেপের জন্য */
+    padding: 10px;
+    width: 50px; /* আইকনের প্রাথমিক প্রস্থ */
+    height: 50px;
+    overflow: hidden; /* টেক্সট লুকানোর জন্য */
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.footer-social-ex2 ul li a i {
+    font-size: 1.5em;
+    width: 30px;
+    text-align: center;
+    z-index: 1;
+}
+
+.footer-social-ex2 ul li a .social-text-ex2 {
+    position: absolute;
+    left: 50px;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    transition: all 0.4s ease;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer-bottom-ex2 {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.8em;
+    color: #999;
+}
+
+/* --- মিডিয়া কোয়েরি (ডেস্কটপ Ex2) --- */
+@media (min-width: 800px) {
+    .footer-section-ex2 {
+        flex: 1 1 22%; /* ডেস্কটপে চারটি কলাম */
+        margin-bottom: 0;
+    }
+
+    .footer-section-ex2.footer-brand-ex2 {
+        flex: 1 1 30%; /* ব্র্যান্ড ইনফো একটু বেশি জায়গা নেবে */
+    }
+
+    .footer-social-ex2 ul {
+        flex-direction: column; /* ডেস্কটপেও কলাম আকারে */
+        gap: 10px;
+    }
+
+    .footer-social-ex2 ul li a {
+        width: 50px; /* হোভার করার আগে প্রস্থ */
+        border-radius: 50px;
+    }
+
+    .footer-social-ex2 ul li a:hover {
+        width: 150px; /* হোভার করলে প্রস্থ বাড়বে */
+        background-color: #007bff;
+        border-radius: 25px; /* গোল থেকে আয়তাকারে */
+    }
+
+    .footer-social-ex2 ul li a:hover .social-text-ex2 {
+        opacity: 1;
+        visibility: visible;
+        left: 60px; /* আইকনের ডানপাশে একটু দূরে সরে আসবে */
+    }
+
+    .footer-social-ex2 ul li a i {
+        margin-right: 10px; /* হোভার করলে আইকনের ডানে ফাঁকা */
+    }
+}
+
+@media (min-width: 1600px) {
+    .footer-container-ex2 {
+        max-width: 1400px;
+    }
+}

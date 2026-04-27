@@ -298,7 +298,49 @@ header {
   color: black;
 }
 
-.cycling {
+.socialBtn {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.socialBtn a {
+  height: 100%;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid;
+  overflow: hidden;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.socialBtn a::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 0;
+  height: 100%;
+  background-color: orange;
+  transition: 0.6s ease;
+}
+.socialBtn a:hover::after {
+  width: 100%;
+  z-index: -1;
+}
+.socialBtn a:hover {
+  color: #000000;
+  z-index: 1;
+}
+.cyclingCard {
   width: 100%;
   height: auto;
   background-color: rgb(8, 2, 34);
@@ -308,23 +350,30 @@ header {
   gap: 10px;
   padding: 100px 5px;
 }
-.cycling p {
-  flex: 1;
-  width: 40%;
-  padding: 10px 0 10px 10px;
-  color: rgba(255, 255, 255, 0.55);
+.cyclingtext {
+  width: 50%;
+  padding: 5px;
+}
+.cyclingtext h2 {
+  white-space: nowrap;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  letter-spacing: 2%;
-  line-height: 120%;
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  border-radius: 20px;
+}
+.cyclingtext p {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.501);
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .cycleImg {
-  width: 60%;
-  height: 250px;
+  width: 50%;
+  height: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -465,7 +514,7 @@ header {
     height: 250px;
   }
   .content {
-    width: 40%;
+    width: 50%;
   }
   .content h1 {
     font-size: 60px;
@@ -479,6 +528,28 @@ header {
     font-size: 18px;
     line-height: 120%;
   }
+
+  .cyclingtext {
+    width: 50%;
+    padding-left: 80px;
+  }
+  .cyclingtext h2 {
+    font-size: 2.1em;
+  }
+  .cyclingtext p {
+    font-size: 1.3em;
+  }
+  .cycleImg {
+    aspect-ratio: 4/3;
+    width: 40%;
+    overflow: hidden;
+  }
+
+  .cycleImg img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
   .travelGallery {
     grid-template-columns: repeat(5, 1fr);
   }
