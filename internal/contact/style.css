@@ -1,0 +1,62 @@
+
+
+
+
+
+
+
+
+/* কন্টেইনার সেটআপ */
+.social-row {
+    display: flex; /* পাশাপাশি রাখার জন্য */
+    gap: 15px; /* আইকনগুলোর মাঝের দূরত্ব */
+    padding: 20px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    width: 50px; /* শুরুর প্রস্থ */
+    height: 50px; /* উচ্চতা */
+    background-color: #333;
+    color: white;
+    border-radius: 50px; /* রাউন্ড শেপ */
+    text-decoration: none;
+    overflow: hidden; /* বড় হওয়ার সময় টেক্সট দেখানোর জন্য */
+    transition: width 0.4s ease, background-color 0.3s; /* স্মুথ এনিমেশন */
+    white-space: nowrap; /* টেক্সট যেন নিচের লাইনে না যায় */
+}
+
+/* আইকন স্টাইল */
+.social-item i {
+    min-width: 50px; /* আইকন সবসময় গোল অংশের মাঝে থাকবে */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* টেক্সট স্টাইল */
+.social-item .text {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding-right: 20px;
+    font-family: sans-serif;
+}
+
+/* হোভার করলে যা ঘটবে */
+.social-item:hover {
+    width: 170px; /* এই উইথ বাড়ার কারণে ডানের আইকনগুলো সরে যাবে */
+}
+
+.social-item:hover .text {
+    opacity: 1; /* টেক্সট ভেসে উঠবে */
+}
+
+/* আলাদা কালার (ঐচ্ছিক) */
+.fb:hover { background-color: #1877F2; }
+.tw:hover { background-color: #1DA1F2; }
+.ln:hover { background-color: #0077B5; }
+.ins:hover { background-color: #E4405F; }
+.yt:hover { background-color: #ff0000; }

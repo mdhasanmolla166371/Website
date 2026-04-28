@@ -5,7 +5,9 @@
 }
 html {
   overscroll-behavior: none;
+  scroll-behavior: smooth;
 }
+
 body {
   height: 100vh;
 }
@@ -422,6 +424,9 @@ header {
   color: #b5a8fc;
 }
 
+#travelGallery {
+  scroll-margin-top: 50px;
+}
 .travelGallery {
   display: grid;
   gap: 20px;
@@ -492,6 +497,100 @@ header {
   );
 }
 
+/* FOOTER */
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #1d1c1c;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px 40px;
+}
+
+.column,
+.linkItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column h4,
+.linkItem h4 {
+  border-bottom: 2px solid rgb(255, 255, 255);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btnBox {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.social-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  color: black;
+  box-shadow: 0 0 12px 0 rgb(37, 3, 255);
+}
+
+.social-icon i {
+  width: 40px;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+.social-icon span {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.linkItem a {
+  text-decoration: none;
+  color: #c3bebe;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 7px;
+  transition: 0.3s ease;
+}
+.linkItem a:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+
+.copyrights {
+  display: flex;
+}
+.copyrights span {
+  color: rgba(255, 255, 255, 0.438);
+  border-top: 1px solid;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
 /* RESPONSIVE DESIGN FOR DESKTOP */
 @media screen and (min-width: 800px) {
   .navigations {
@@ -555,5 +654,39 @@ header {
 
   .travelGallery {
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  .footerContent {
+    justify-content: space-around;
+    padding: 20px 0 40px;
+  }
+
+  .social-icon:hover {
+    width: 150px;
+  }
+
+  .social-icon {
+    box-shadow: none;
+  }
+  .facebook:hover {
+    background-color: #1877f2;
+    color: white;
+  }
+  .github:hover {
+    background-color: #6e5494;
+    color: white;
+  }
+  .linkedin:hover {
+    background-color: #0a66c2;
+    color: white;
+  }
+  .twitter:hover {
+    background-color: #1da1f2;
+    color: white;
+  }
+
+  .linkItem a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
   }
 }
