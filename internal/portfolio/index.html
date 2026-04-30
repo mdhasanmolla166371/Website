@@ -1,66 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style.css">
-   <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমার সম্পর্কে - [আপনার নাম]</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+Bengali:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <footer class="footer-ex2">
-    <div class="footer-container-ex2">
-        <div class="footer-section-ex2 footer-brand-ex2">
-            <h3>আপনার ব্র্যান্ড</h3>
-            <p>সেরা মানের পণ্য এবং পরিষেবা নিয়ে আমরা আপনার পাশে আছি।</p>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#">[আপনার নাম]</a>
+            </div>
+            <!-- Checkbox for hamburger menu -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="hamburger">
+                <i class="fas fa-bars"></i>
+            </label>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#about">আমার সম্পর্কে</a></li>
+                    <li><a href="#skills">দক্ষতা</a></li>
+                    <li><a href="#contact">যোগাযোগ</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div class="footer-section-ex2 footer-social-ex2">
-            <h4>আমাদের অনুসরণ করুন</h4>
-            <ul>
-                <li>
-                    <a href="#" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                        <span class="social-text-ex2">Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" target="_blank" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                        <span class="social-text-ex2">Twitter</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" target="_blank" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                        <span class="social-text-ex2">YouTube</span>
-                    </a>
-                </li>
-            </ul>
+    <section id="hero" class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>হ্যালো, আমি <span class="highlight">[আপনার নাম]</span></h1>
+                <p>আমি একজন উৎসাহী ওয়েব ডেভেলপার এবং ডিজিটাল সার্ভিস প্রোভাইডার, নতুন কিছু শিখতে এবং তৈরি করতে ভালোবাসি। আমার লক্ষ্য হল আপনার ধারণাগুলোকে বাস্তবে রূপ দেওয়া!</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn primary-btn">আমার পোর্টফোলিও দেখুন</a>
+                    <a href="#contact" class="btn secondary-btn">আমার সাথে যোগাযোগ করুন</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="your-photo.jpg" alt="আপনার ছবি"> <!-- আপনার ছবির পাথ এখানে দিন -->
+            </div>
         </div>
+    </section>
 
-        <div class="footer-section-ex2 footer-links-ex2">
-            <h4>গুরুত্বপূর্ণ লিঙ্ক</h4>
-            <ul>
-                <li><a href="#">হোম</a></li>
-                <li><a href="#">শপ</a></li>
-                <li><a href="#">সার্ভিসেস</a></li>
-                <li><a href="#">যোগাযোগ</a></li>
-            </ul>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>আমার সম্পর্কে</h2>
+            <p>আমি ওয়েব ডেভেলপমেন্টে মনোযোগী এবং HTML ও CSS ব্যবহার করে রেসপনসিভ ওয়েবসাইট তৈরিতে দক্ষ। Figma থেকে HTML/CSS রূপান্তর আমার অন্যতম দক্ষতা। এছাড়াও, ফাইল রূপান্তর (PDF to Image, JPG, Word), ডেটা এন্ট্রি, ওয়েব রিসার্চ, ফাইল ফরম্যাটিং এবং CV/কভার লেটার তৈরির মতো বিভিন্ন ডিজিটাল সেবা প্রদান করি। সোশ্যাল মিডিয়া ব্যানার ডিজাইনও আমার কাজের অংশ। আমি নতুন চ্যালেঞ্জ গ্রহণ করতে এবং কার্যকরী সমাধান দিতে প্রস্তুত।</p>
         </div>
+    </section>
 
-        <div class="footer-section-ex2 footer-resources-ex2">
-            <h4>সম্পদ</h4>
-            <ul>
-                <li><a href="#">ব্লগ</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">গোপনীয়তা নীতি</a></li>
-            </ul>
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>আমার দক্ষতা</h2>
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> ওয়েব ডেভেলপমেন্ট ও ডিজাইন</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">HTML ও CSS</div>
+                    <div class="skill-item">রেসপনসিভ ডিজাইন</div>
+                    <div class="skill-item">Figma to HTML/CSS</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-file-alt"></i> ডকুমেন্ট ও ফাইল ম্যানেজমেন্ট</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">PDF to Image</div>
+                    <div class="skill-item">PDF to JPG</div>
+                    <div class="skill-item">PDF to Word</div>
+                    <div class="skill-item">ফাইল ফরম্যাটিং</div>
+                    <div class="skill-item">CV & কভার লেটার</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-laptop-code"></i> ডিজিটাল ও ডেটা সার্ভিসেস</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">ওয়েব রিসার্চ</div>
+                    <div class="skill-item">ডেটা এন্ট্রি</div>
+                    <div class="skill-item">সোশ্যাল মিডিয়া ব্যানার</div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="footer-bottom-ex2">
-        <p>&copy; 2024 আপনার কোম্পানি। সর্বস্বত্ব সংরক্ষিত।</p>
-    </div>
-</footer>
-</footer>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>আমার সাথে যোগাযোগ করুন</h2>
+            <p>আপনার যদি কোনো প্রজেক্ট থাকে বা আমার পরিষেবা সম্পর্কে জানতে চান, তাহলে নির্দ্বিধায় আমার সাথে যোগাযোগ করুন!</p>
+            <a href="mailto:your-email@example.com" class="btn primary-btn"><i class="fas fa-envelope"></i> ইমেইল পাঠান</a>
+            <!-- এখানে আপনার অন্যান্য যোগাযোগের তথ্য বা ফর্ম যোগ করতে পারেন -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 [আপনার নাম]. সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+    </footer>
 </body>
 </html>

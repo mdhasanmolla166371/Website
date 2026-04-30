@@ -1,0 +1,68 @@
+.profile-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-container img {
+  width: 180px; /* ইমেজ বর্ডার থেকে ৩-৪ পিক্সেল ছোট */
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc; /* ইমেজের নিজস্ব বর্ডার */
+}
+
+/* .profile-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498db; 
+  border-bottom-color: #3498db;
+  
+  animation: rotate-border 3s linear infinite;
+}
+
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1); 
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+} */
+
+.profile-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid ;
+  border-right-color: #3498db; 
+  border-left-color: #3498db;
+  
+  animation: swing-border 3s ease-in-out infinite;
+}
+
+@keyframes swing-border {
+  0% {
+    transform: rotate(-45deg); /* শুরুতে বামে ৪৫ ডিগ্রি */
+  }
+  
+  50% {
+    transform: rotate(45deg); /* শুরুতে বামে ৪৫ ডিগ্রি */
+  }
+  
+  100% {
+    transform: rotate(-45deg); /* শেষে আবার বামে ফিরে আসবে */
+  }
+}

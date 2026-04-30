@@ -1,5 +1,16 @@
-/* এক্সাম্পল ১ স্টাইল */
-
+ /* General Styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --text-color-dark: #333;
+    --text-color-light: #fff;
+    --bg-light: #f8f9fa;
+    --bg-dark: #343a40;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --font-bengali: 'Noto Sans Bengali', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+}
 
 * {
     margin: 0;
@@ -8,151 +19,484 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-bengali), var(--font-poppins);
     line-height: 1.6;
-    color: #eee;
-    background-color: #222;
+    color: var(--text-color-dark);
+    background-color: var(--bg-light);
 }
 
- /* এক্সাম্পল ২ স্টাইল */
-.footer-ex2 {
-    background-color: #222;
-    padding: 40px 20px 20px;
-    color: #eee;
-}
-
-.footer-container-ex2 {
+.container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-bottom: 20px;
+    padding: 0 20px;
 }
 
-.footer-section-ex2 {
-    flex: 1 1 100%; /* মোবাইলে প্রতিটি সেকশন পুরো প্রস্থ নেবে */
-    margin-bottom: 30px;
+h1, h2, h3 {
+    font-family: var(--font-poppins), var(--font-bengali);
+    margin-bottom: 1rem;
+    color: var(--text-color-dark);
 }
 
-.footer-section-ex2 h3,
-.footer-section-ex2 h4 {
-    color: #007bff;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-}
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
 
-.footer-section-ex2 p {
-    font-size: 0.9em;
-    color: #bbb;
-}
-
-.footer-section-ex2 ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section-ex2 ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section-ex2 ul li a {
-    color: #eee;
+a {
     text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header & Navigation (Default - Desktop First) */
+header {
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--text-color-light);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-links ul {
+    display: flex; /* Default: visible for desktop */
+}
+
+.nav-links ul li {
+    margin-left: 20px;
+}
+
+.nav-links ul li a {
+    color: var(--text-color-light);
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
-.footer-section-ex2 ul li a:hover {
-    color: #007bff;
+.nav-links ul li a:hover {
+    color: var(--primary-color);
 }
 
-/* সোশ্যাল লিঙ্ক স্টাইল Ex2 */
-.footer-social-ex2 ul {
+/* Hide checkbox and hamburger by default for desktop */
+.nav-toggle {
+    display: none;
+}
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #e0f7fa, #bbdefb);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content {
     display: flex;
-    flex-direction: column; /* মোবাইলে উল্লম্ব */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 800px;
+    text-align: left; /* Align text left on desktop */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color-dark);
+}
+
+.hero-text h1 .highlight {
+    color: var(--primary-color);
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.hero-image img {
+    width: 250px; /* Adjust as needed */
+    height: 250px; /* Adjust as needed */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: flex-start; /* Align buttons left on desktop */
     gap: 15px;
 }
 
-.footer-social-ex2 ul li a {
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+.primary-btn:hover {
+    background-color: #0056b3; /* Darken primary color */
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+}
+
+.secondary-btn:hover {
+    background-color: #545b62; /* Darken secondary color */
+    transform: translateY(-2px);
+}
+
+/* Section Styling */
+section {
+    padding: 60px 0;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--bg-light);
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--card-bg);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* About Section */
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Skills Section */
+.skills-section {
+    background-color: var(--bg-light);
+}
+
+.skill-category {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.skill-category h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
-    color: #eee;
-    background-color: #333;
-    border-radius: 50px; /* গোল শেপের জন্য */
-    padding: 10px;
-    width: 50px; /* আইকনের প্রাথমিক প্রস্থ */
-    height: 50px;
-    overflow: hidden; /* টেক্সট লুকানোর জন্য */
-    transition: all 0.4s ease;
-    position: relative;
+    justify-content: center;
 }
 
-.footer-social-ex2 ul li a i {
-    font-size: 1.5em;
-    width: 30px;
+.skill-category h3 i {
+    margin-right: 10px;
+    font-size: 2rem;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-align: center;
-    z-index: 1;
+    font-weight: 600;
+    color: var(--text-color-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--primary-color);
 }
 
-.footer-social-ex2 ul li a .social-text-ex2 {
-    position: absolute;
-    left: 50px;
-    opacity: 0;
-    visibility: hidden;
-    white-space: nowrap;
-    transition: all 0.4s ease;
-    color: #fff;
-    font-weight: bold;
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-.footer-bottom-ex2 {
+/* Contact Section */
+.contact-section {
     text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #333;
-    font-size: 0.8em;
-    color: #999;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 80px 0;
 }
 
-/* --- মিডিয়া কোয়েরি (ডেস্কটপ Ex2) --- */
-@media (min-width: 800px) {
-    .footer-section-ex2 {
-        flex: 1 1 22%; /* ডেস্কটপে চারটি কলাম */
+.contact-section h2 {
+    color: var(--text-color-light);
+}
+
+.contact-section h2::after {
+    background-color: var(--text-color-light);
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.contact-section .btn {
+    background-color: var(--text-color-light);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    padding: 15px 30px;
+}
+
+.contact-section .btn:hover {
+    background-color: #e0e0e0;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.contact-section .btn i {
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
+}
+
+
+/* --- Responsive Design --- */
+
+/* Mobile Version: 1px to 799px */
+@media (max-width: 799px) {
+    /* Header & Navigation */
+    header .container {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: space-between; /* Space out logo and hamburger */
+    }
+
+    .logo {
+        flex-grow: 1; /* Allow logo to take up available space */
+    }
+
+    .nav-links {
+        order: 3; /* Push nav links below logo and hamburger */
+        width: 100%;
+        background-color: var(--bg-dark);
+        max-height: 0; /* Initially hide nav links */
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* Stack nav items vertically */
+        padding: 15px 0;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Show hamburger icon and hide default nav toggle checkbox */
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+    }
+    .nav-toggle {
+        display: none; /* Hide the actual checkbox */
+    }
+
+    /* When checkbox is checked, show the nav links */
+    .nav-toggle:checked ~ .nav-links {
+        max-height: 300px; /* Adjust as needed to fit all links */
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 60px 0;
+    }
+    .hero-content {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+
+    .hero-image {
+        order: -1; /* Image appears above text on mobile */
+        margin-bottom: 30px;
+    }
+
+    .hero-text {
+        text-align: center; /* Center text on mobile */
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+        justify-content: center; /* Center buttons on mobile */
+    }
+
+    .hero-image img {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* General Section Styling */
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .skill-category h3 {
+        font-size: 1.6rem;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .skill-category h3 i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .skill-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        padding: 0 10px;
+    }
+
+    .skill-item {
+        padding: 15px;
+    }
+
+    .contact-section {
+        padding: 60px 0;
+    }
+    .contact-section p {
+        font-size: 1rem;
+    }
+    .contact-section .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Desktop Version: 800px to 1600px */
+@media (min-width: 800px) and (max-width: 1600px) {
+    .container {
+        max-width: 1100px; /* Adjust container width for desktop range */
+    }
+
+    .hero-content {
+        flex-direction: row; /* Ensure horizontal layout */
+        text-align: left;
+    }
+
+    .hero-image {
+        margin-left: 40px; /* Space between text and image */
         margin-bottom: 0;
     }
 
-    .footer-section-ex2.footer-brand-ex2 {
-        flex: 1 1 30%; /* ব্র্যান্ড ইনফো একটু বেশি জায়গা নেবে */
+    .hero-text {
+        text-align: left;
     }
 
-    .footer-social-ex2 ul {
-        flex-direction: column; /* ডেস্কটপেও কলাম আকারে */
-        gap: 10px;
+    .hero-buttons {
+        justify-content: flex-start;
     }
 
-    .footer-social-ex2 ul li a {
-        width: 50px; /* হোভার করার আগে প্রস্থ */
-        border-radius: 50px;
+    h1 {
+        font-size: 3.2rem;
     }
 
-    .footer-social-ex2 ul li a:hover {
-        width: 150px; /* হোভার করলে প্রস্থ বাড়বে */
-        background-color: #007bff;
-        border-radius: 25px; /* গোল থেকে আয়তাকারে */
+    h2 {
+        font-size: 2.4rem;
     }
 
-    .footer-social-ex2 ul li a:hover .social-text-ex2 {
-        opacity: 1;
-        visibility: visible;
-        left: 60px; /* আইকনের ডানপাশে একটু দূরে সরে আসবে */
+    .skill-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for skills */
     }
 
-    .footer-social-ex2 ul li a i {
-        margin-right: 10px; /* হোভার করলে আইকনের ডানে ফাঁকা */
+    .skill-category h3 {
+        flex-direction: row;
     }
 }
 
-@media (min-width: 1600px) {
-    .footer-container-ex2 {
-        max-width: 1400px;
+/* Larger screens (optional, beyond 1600px) */
+@media (min-width: 1601px) {
+    .container {
+        max-width: 1400px; /* Even wider container for very large screens */
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 2.8rem;
     }
 }
