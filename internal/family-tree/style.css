@@ -1,68 +1,96 @@
-.profile-container {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #0a0120;
 }
 
-.profile-container img {
-  width: 180px; /* ইমেজ বর্ডার থেকে ৩-৪ পিক্সেল ছোট */
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ccc; /* ইমেজের নিজস্ব বর্ডার */
+.tree{
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    background-color: #0a0120;
 }
 
-/* .profile-container::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  border-top-color: #3498db; 
-  border-bottom-color: #3498db;
-  
-  animation: rotate-border 3s linear infinite;
+.tree ul {
+    padding-top: 20px; 
+    position: relative;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
 }
 
-@keyframes rotate-border {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(180deg) scale(1); 
-  }
-  100% {
-    transform: rotate(360deg) scale(1);
-  }
-} */
-
-.profile-container::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 4px solid ;
-  border-right-color: #3498db; 
-  border-left-color: #3498db;
-  
-  animation: swing-border 3s ease-in-out infinite;
+.tree li {
+    float: left; 
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+    transition: all 0.5s;
 }
 
-@keyframes swing-border {
-  0% {
-    transform: rotate(-45deg); /* শুরুতে বামে ৪৫ ডিগ্রি */
-  }
-  
-  50% {
-    transform: rotate(45deg); /* শুরুতে বামে ৪৫ ডিগ্রি */
-  }
-  
-  100% {
-    transform: rotate(-45deg); /* শেষে আবার বামে ফিরে আসবে */
-  }
+/* কানেক্টিং লাইন তৈরি করা */
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%; 
+    height: 20px;
+}
+.tree li::after {
+    right: auto; 
+    left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+/* প্রতি লাইনের প্রথম ও শেষ উপাদানের কানেক্টর রিমুভ করা */
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+.tree li:only-child { padding-top: 0; }
+.tree li:first-child::before, .tree li:last-child::after {
+    border: 0 none;
+}
+.tree li:last-child::before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+/* নিচের দিকে নামা লাইন */
+.tree ul ul::before {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0; 
+    height: 20px;
+}
+
+/* নোড বা বক্স স্টাইল */
+.tree .node {
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+/* হোভার ইফেক্ট */
+.tree .node:hover {
+    background: #e9453f; 
+    color: #fff; 
+    border: 1px solid #94a0b4;
 }
